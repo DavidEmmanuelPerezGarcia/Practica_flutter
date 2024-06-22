@@ -6,7 +6,7 @@ class ListMyCards{
     ListCards(
       title: 'Parrafo1',
       contain: Container(
-        height: 200.0,
+        height: 250.0,
         color: Colors.green,
       ),
       text: 'mas info..'

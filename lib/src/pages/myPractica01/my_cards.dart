@@ -15,11 +15,12 @@ class MyCardsPractica extends StatelessWidget{
       itemBuilder: (context,i){
         return Card(
           margin: const EdgeInsets.all(10.0),
+          elevation: 10.0,
           child: Column(
             children: [
-              Text(myListCards[i].title),
+              Padding(padding: const EdgeInsets.all(8.0), child: Text(myListCards[i].title)),
               myListCards[i].contain,
-              Text(myListCards[i].text)
+              Padding(padding: const EdgeInsets.all(8.0), child: Text(myListCards[i].text))
             ],
           ),
         );
