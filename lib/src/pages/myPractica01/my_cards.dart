@@ -1,45 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:practica_documentacion/src/utils/practica01/list_card.dart';
+import 'package:practica_documentacion/src/utils/practica01/list_my_cards.dart';
 
 class MyCardsPractica extends StatelessWidget{
   const MyCardsPractica ({super.key});
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Card(
-          margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-          elevation: 10.0,
-          color: Colors.white,
+    List<ListCards> myListCards = ListMyCards().myListCards;
+
+    return ListView.builder(
+      physics: const NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+      itemCount: myListCards.length,
+      itemBuilder: (context,i){
+        return Card(
+          margin: const EdgeInsets.all(10.0),
           child: Column(
             children: [
-              const Text('Parrafo'),
-              Container(
-                width: double.infinity,
-                height: 150,
-                color: Colors.grey,
-              ),
-              const Text('Parrafo')
+              Text(myListCards[i].title),
+              myListCards[i].contain,
+              Text(myListCards[i].text)
             ],
           ),
-        ),
-        Card(
-          margin: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-          elevation: 10.0,
-          color: Colors.white,
-          child: Column(
-            children: [
-              const Text('Parrafo'),
-              Container(
-                width: double.infinity,
-                height: 150,
-                color: Colors.grey,
-              ),
-              const Text('Parrafo')
-            ],
-          ),
-        ),
-      ],
+        );
+      }
     );
   }
 }
