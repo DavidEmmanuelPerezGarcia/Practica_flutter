@@ -18,6 +18,14 @@ class ListMyCards{
         color: Colors.blue,
       ),
       text: 'mas info 2 ...'
+    ),
+    ListCards(
+      title: 'Parrafo 3',
+      contain: Container(
+        height: 140,
+        color: Colors.orange
+      ),
+      text: 'Mas info 3...'
     )
   ];
 }
